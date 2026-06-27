@@ -1,0 +1,34 @@
+# KEAMANAN (SANGAT PENTING)
+.env
+
+# BACKEND (GOLANG)
+/backend/main
+/backend/bin/
+/backend/tmp/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# FRONTEND (REACT/NODE)
+/frontend/node_modules/
+/frontend/dist/
+/frontend/build/
+/frontend/.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS & EDITOR (VSCODE, MAC, DLL)
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
