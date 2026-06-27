@@ -1,4 +1,4 @@
-# SchoolPay 🎓
+# SchoolKita 🎓
 
 Sistem manajemen pembayaran sekolah modern yang dirancang untuk performa tinggi, stabilitas, dan skalabilitas (siap menampung ribuan transaksi/detik). 
 
