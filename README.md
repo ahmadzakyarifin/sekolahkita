@@ -53,3 +53,17 @@ Dokumentasi ini ditulis sebagai pengingat mengapa keputusan-keputusan arsitektur
 ### 3. Kenapa dikelompokkan pakai `module` (Modul) bukan `layer` (Lapisan)?
 - **Masalah Clean Architecture (Layer):** Biasanya *Clean Architecture* menaruh folder secara global: `controllers/`, `services/`, `repositories/`. Jika kita ingin mengedit fitur **Siswa**, kita harus melompat mencari file Siswa di 3 folder yang sangat jauh tersebut. Sangat melelahkan!
 - **Solusi Modular Monolith:** Semua file yang berkaitan dengan fitur **Siswa** berkumpul di satu tempat: `internal/module/student/`. Sangat mudah dibaca. Kelebihan lainnya, jika besok proyek ini membesar dan fitur Siswa ingin dipisah menjadi server *Microservice* tersendiri, kita tinggal memotong 1 folder tersebut dan memindahkannya ke server baru (*Plug and Play*).
+
+---
+
+## 🐶 API Collection (Bruno)
+
+Kami menggunakan [Bruno](https://www.usebruno.com/) (sebuah *open-source API client* yang ringan sebagai pengganti Postman) untuk mendokumentasikan dan mencoba URL API.
+
+### Cara Menggunakan (Untuk Anggota Tim)
+1. Download dan install aplikasi **Bruno** secara gratis dari: [usebruno.com/downloads](https://www.usebruno.com/downloads)
+2. Buka aplikasi Bruno.
+3. Di layar awal, klik tombol **Open Collection**.
+4. Arahkan *File Manager* Anda ke folder project ini, lalu pilih folder `bruno-api`.
+5. Selesai! Anda sudah bisa melihat seluruh daftar API dan langsung mencoba URL-nya.
+
