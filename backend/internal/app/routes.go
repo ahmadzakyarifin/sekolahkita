@@ -8,8 +8,10 @@ import (
 
 func SetupRoutes(router *gin.Engine, db *gorm.DB) {
 	api := router.Group("/api/v1")
-	{
-		health.RegisterRoutes(api)
-		
-	}
+
+	router.GET("/", func(c *gin.Context) {
+		c.Redirect(301, "/api/v1/health")
+	})
+
+	health.RegisterRoutes(api)
 }

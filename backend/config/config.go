@@ -49,8 +49,9 @@ type Config struct {
 	SMTPPass  string
 
 	// Frontend
-	FrontendURL  string
-	FrontendPort string
+	FrontendURL    string
+	FrontendPort   string
+	AllowedOrigins string
 }
 
 func LoadConfig() *Config {
@@ -106,7 +107,8 @@ func LoadConfig() *Config {
 		SMTPEmail: os.Getenv("SMTP_EMAIL"),
 		SMTPPass:  os.Getenv("SMTP_PASS"),
 
-		FrontendURL:  os.Getenv("FRONTEND_URL"),
-		FrontendPort: os.Getenv("FRONTEND_PORT"),
+		FrontendURL:    os.Getenv("FRONTEND_URL"),
+		FrontendPort:   os.Getenv("FRONTEND_PORT"),
+		AllowedOrigins: os.Getenv("ALLOWED_ORIGINS"),
 	}
 }

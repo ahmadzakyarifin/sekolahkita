@@ -5,6 +5,7 @@ import (
 
 	"github.com/ahmadzakyarifin/sekolahkita/backend/config"
 	"github.com/ahmadzakyarifin/sekolahkita/backend/internal/infrastructure"
+	"github.com/ahmadzakyarifin/sekolahkita/backend/internal/middleware"
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,12 +21,15 @@ func Run() {
 	if err != nil {
 		log.Fatalf("Mati karena Database gagal terhubung: %v", err)
 	}
-	engine := gin.Default()
+	server := gin.Default()
 
-	SetupRoutes(engine, db)
+	server.Use(middleware.CORSMiddleware(cfg))
 
-	log.Printf("Server SchoolPay Backend menyala di port %s (Mode: %s)\n", cfg.Port, cfg.AppEnv)
-	if err := engine.Run(":" + cfg.Port); err != nil {
+	SetupRoutes(server, db)
+
+	log.Printf("Server SekolahKita menyala di port %s (Mode: %s)\n", cfg.Port, cfg.AppEnv)
+	if err := server.Run(":" + cfg.Port); err != nil {
 		log.Fatalf("Mati karena server gagal berjalan: %v", err)
 	}
 }
+
